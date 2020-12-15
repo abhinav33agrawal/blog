@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About Us
+{% endblock title %}
+{% block style %}
+#AddBlogs input[type=text], select,textarea {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 10px;
+  display: flex ;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 0%;
+  box-sizing: border-box;
+  /* text-align: center; */
+  
+}
+
+#AddBlogs input[type=submit] {
+  width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  margin-top: 0%;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#AddBlogs input[type=submit]:hover {
+  background-color: #45a049;
+
+}
+
+#AddBlogs div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+}
+#AddForm{
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+{% endblock style %}
+
+{% block body %}
+
+<h1 align = center> Please Fill the details below </h1><br><br>
+<div id = "AddBlogs">
+ <center> <form action="fillblog" method="POST"> {% csrf_token %}
+    <h3> Title for Blog</h3>
+    <input a type="text" id="fname" name="title" placeholder="Title...">
+
+    
+    <h3 align = center> Your Blog </h3>
+    <textarea name="blogData" placeholder="My Blog" ></textarea>
+
+    <!-- <input  type="text" id="lname" name="lastname" placeholder="Your Blog"> -->
+    
+    
+    <h3 align = center> Select Category </h3>
+    <select id="country" name="category">
+      <option value="other">Others </option>
+      <option value="fashion">fashion</option>
+      <option value="movie">Movie</option>
+      <option value="lifestyle">Lifestyle</option>
+      <option value="music">Music</option>
+      <option value="gaming">Gaming</option>
+      <option value="politics">Politics</option>
+      <option value="sports">Sports</option>
+      <option value="food">Food</option>
+      <option value="travel">Travel</option>
+    </select>
+    <h3 align = center> Blogger Name </h3>
+    <input  type="text" id="lname" name="Name" placeholder="by..">
+    
+    <input type="submit" value="Submit">
+  </form><center>
+</div>
+{% endblock body %}

@@ -1,0 +1,12 @@
+{% extends 'first.html' %}
+{% block body %}
+<body>
+<form>
+<label for="fname">Enter Text:</label>
+<input type="text" id="fname" name="fname"><br><br>
+<button formaction ="upper" type="submit" class="btn btn-primary">UpperCase</button>
+<button formaction="lower" type="submit" class="btn btn-secondary">LowerCase</button>
+<button formaction="remove" type="submit" class="btn btn-success">Remove Punctation</button>
+</form>
+</body>
+{% endblock %}

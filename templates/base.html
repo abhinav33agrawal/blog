@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title> 
+        {% block title %}
+        {% endblock title %}
+    </title>
+</head>
+<style>
+body {background-image: url("https://www.sterlingcheck.com/wp-content/uploads/2018/09/blog-listing.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#contact {
+  float: right; 
+  right: 0px;
+  {% comment %} width: 30px; {% endcomment %}
+  {% comment %} border: 3px solid #73AD21; {% endcomment %}
+  padding: 14px 16px;
+  {% comment %} padding: 10px; {% endcomment %}
+}
+#image{
+  float: left;
+}
+#posts {
+  float: left ; 
+  right: 0px;
+  {% comment %} width: 30px; {% endcomment %}
+  {% comment %} border: 3px solid #73AD21; {% endcomment %}
+  padding: 14px 16px;
+  {% comment %} padding: 10px; {% endcomment %}
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.searchBar{
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.searchBar input[type=text]{ 
+            width:300px; 
+            height:25px; 
+            border-radius:20px; 
+            border: none;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+{% block style %}
+{% endblock style %}
+</style>
+
+<body>
+<div class="navbar">
+<img id = 'image' src="https://dynamic.brandcrowd.com/preview/logodraft/1fcd7fb1-bcb1-4e17-ac2c-552ee1506f69/image/large.png" width="100" height="50">
+<a href= "/">Home</a>
+  
+  <div class="dropdown">
+    <button class="dropbtn">Categories 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+                  <a class="dropdown-item" href="category?cat=fashion">Fashion</a>
+                  <a class="dropdown-item" href="category?cat=movie">Movie</a>
+                  <a class="dropdown-item" href="category?cat=lifestyle">Lifestyle</a>
+                  <a class="dropdown-item" href="category?cat=music">Music</a>
+                  <a class="dropdown-item" href="category?cat=gaming">Gaming</a>
+                  <a class="dropdown-item" href="category?cat=politics">Politics</a>
+                  <a class="dropdown-item" href="category?cat=sports">Sports</a>
+                  <a class="dropdown-item" href="category?cat=food">Food</a>
+                  <a class="dropdown-item" href="category?cat=travel">Travel</a>
+                  <hr class="dropdown-divider">
+                  <a class="dropdown-item" href="category?cat=other">Other</a>
+    </div>
+  </div>
+  <a id="posts" href="My_Posts">My Posts</a>
+  <a id="posts" href="AddBlog">+ Add Blog</a>
+  
+  <form class= 'searchBar' action="">
+      <input type="text" placeholder=" Search.. " name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form> 
+
+  <!-- <a id="contact" href="contact">Contact Us</a> -->
+  <a id="contact" href="about">About Us</a>
+</div>
+
+
+{% block body %}
+
+{% endblock body %}
+    
+</body>
+</html>

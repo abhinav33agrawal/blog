@@ -1,2 +1,2 @@
 # blog
-A Blogging website
+A Blogging website with django as backend
